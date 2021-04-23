@@ -13,17 +13,13 @@
     $b = 5;
     $c = 7;
     echo '<p>**************** AVANT PERMUTATION ****************</p>
-        <p>A:'.$a.'</p>'.
-        '<p>B:'.$b.'</p>'.
-        '<p>C:'.$c.'</p>';
+        <p>A:'.$a.'</p><p>B:'.$b.'</p><p>C:'.$c.'</p>';
         $d = $a;
         $a = $b;
         $b = $c;    
         $c = $d;
     echo '<p>**************** APRES PERMUTATION ****************</p>
-    <p>A:'.$a.'</p>'.
-    '<p>B:'.$b.'</p>'.
-    '<p>C:'.$c.'</p>'
+    <p>A:'.$a.'</p><p>B:'.$b.'</p><p>C:'.$c.'</p>'
     ?>
 
 <h2>Exercice 2</h2>
@@ -34,8 +30,7 @@ $AGE = 29;
 $AGE2 = 30;
 $GENRE = 'homme';
 $GENRE2 = 'femme';
-echo '<p>'.$NOM.' à '.$AGE.', et c\'est un '.$GENRE.'</p>';
-echo '<p>'.$NOM2.' à '.$AGE2.', et c\'est un '.$GENRE2.'</p>';
+echo '<p>'.$NOM.' à '.$AGE.', et c\'est un '.$GENRE.'</p><p>'.$NOM2.' à '.$AGE2.', et c\'est un '.$GENRE2.'</p>';
 ?>
 <h2>Exercice 3</h2>
 <?php
