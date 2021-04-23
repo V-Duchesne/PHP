@@ -10,7 +10,7 @@
 <h2>Exercice 4</h2>
     <?php
         $rand = rand(1,20);
-        echo '<h3>le nombre tiré au sert est : '. $rand.'</h3>'; 
+        echo '<h3>le nombre tiré au sort est : '. $rand.'</h3>'; 
         if($rand >=1 && $rand <=5){
             echo '<p>Il est compris entre 1 et 5</p>';
         }elseif($rand >=6 && $rand <=10){
