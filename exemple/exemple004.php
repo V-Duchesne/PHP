@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Les tableaux</title>
-</head>
-<body>
+<?php 
+    $titre = "Exemple 004 - Les tableaux";
+    require "../common/template.php" ?>
 <!-- PARTIE 1 -->
     <?php 
     // déclarer un tableau de manière classique
@@ -18,7 +12,7 @@
             'tableau' => array(
                 1 => "Nouveau",
                 2 => "tableau"
-                )
+            )
             );
         // var_dump affiche les informations de la variables
         var_dump($tableau);
@@ -31,6 +25,7 @@
             4.5 => "la clé 4.5 sera convertie en entier elle aussi",
             false => "un boolean sera converti en binaire (1 ou 0)",
             null => "la clé null sera converie en chaine de caractère vide"
+
         ];
         var_dump($tableau2);
 
@@ -50,7 +45,7 @@
         ];
 
     ?>
-
+   
     <h3>Carte d'indentité</h3>
     <p>Nom : <?= $identité['nom'] ?></p>
     <p>Prénom : <?= $identité['prénom'] ?> </p>

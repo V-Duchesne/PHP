@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Les boucles</title>
-</head>
-<body>
+<?php 
+    $titre = "Exemple 006 - Les boucles";
+    require "../common/template.php" ?>
     <!-- PARTIE 1 -->
     <h2>La boucle While</h2>
     <?php
@@ -19,7 +13,6 @@
             $ligne++;
         endwhile;
     ?>
-
     <h2>La boucle for</h2>
 
     <?php
@@ -45,7 +38,3 @@
             echo "<p>Ma boucle foreach passe maitenant sur le user n°<span style='font-weight: bold'>$tab</span> <span style='font-weight: bold'>$utilisateur</span></p>";
         endforeach;
     ?>
-
-    
-</body>
-</html>

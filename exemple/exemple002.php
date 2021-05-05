@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Les variables</title>
-</head>
-<body>
+<?php 
+    $titre = "Exemple 002 - Les types de données";
+    require "../common/template.php" ?>
 <!-- PARTIE 01 -->
     <!-- Variables -->
     <?php
@@ -18,7 +12,7 @@
     ?>
 
     <!-- Les types de variables -->
-    <?php
+    <?php 
         $age = 18; // ENTIER (INT)
         $prixDuBaril = 62.94; //FLOAT
         $prénom = "Guy" ;// STRING
@@ -39,6 +33,3 @@
          de codes que nous codons dans un nouveau langage';
 
     ?>
-
-
-</html>

@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<?php 
+    $titre = "Exercice Série 003 - Les boucles";
+    require "../common/template.php" ?>
     <h2>Exercice 007</h2>
+    <style>
+        table, tr, th, td{
+            border: 1px solid black;
+            padding: 0.2em;
+            text-align: center;
+        }
+    </style>
     <?php
 
-    echo '<table border>
+    echo '<table>
     <tr>
         <th>Nombre</th>
         <th>Carré</th>
@@ -20,11 +21,11 @@
     // LES LIGNES DES NOMBRES DYNAMIQUES
     for ($i = 1; $i <= 20; $i++) {
 
-        echo'<tr>
-            <td>'.$i.'</td>
-            <td>'.$i*$i.'</td>
-            <td>'.sqrt($i).'</td>
-        </tr>';
+    echo'<tr>
+        <td>'.$i.'</td>
+        <td>'.$i*$i.'</td>
+        <td>'.sqrt($i).'</td>
+    </tr>';
 
     }
 
@@ -56,13 +57,15 @@
             endif;
         endwhile;
         echo "<p>Le nombre choisi est: $random</p>"
+
+
     ?>
 
     <h2>Exercice 010</h2>
 
     <?php
     
-        // créer le tableau de note de Guy
+        // créer le tableau de note de Matthieu
         $noteDeGuy = [];
         // Variable pour acceuillir la moyenne
         $moyenne = 0;
@@ -103,6 +106,3 @@
         endif;
         echo '</h3';
     ?>
-
-</body>
-</html>

@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Les structures de contrôles</title>
-</head>
-<body>
-
+<?php 
+    $titre = "Exemple 005 - Les structures de contrôle!";
+    require "../common/template.php" ?>
 <!-- PARTIE 1 -->
 <?php
     // CONDITIONS IF
-    $age = 16;
+    $age = 20;
 
     if($age >= 18){
         echo "<p>L'utilisateur à $age ans, il est majeur!!</p>";
@@ -26,7 +19,7 @@
     // CONDITION ELSEIF
 
     // Déclaration d'une variable
-    $vitesse = rand(1, 180);//Random = tirage au sort sur une valeur min et max
+    $vitesse = rand(1, 180);
     echo "<p>vitesse: $vitesse</p>";
     
     // On teste la valeur de la variable
@@ -44,7 +37,7 @@
     }
 
     // CONDITIONS IMBRIQUEES
-    $pseudo = "Tinetin"; 
+    $pseudo = "Tintin"; 
     $mdp = "lune";
 
     if($pseudo == "Tintin" && $mdp == "lune"){
@@ -93,6 +86,3 @@
     
         }
 ?>
-
-</body>
-</html>

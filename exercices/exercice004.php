@@ -1,83 +1,154 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h2>Exercice 11</h2>
+<?php 
+    $titre = "Exercice Série 004 - Les fonctions";
+    require "../common/template.php" ?>
+    <style>
+        .personne{
+            display: flex;
+            flex-direction: row;
+        }
+        .border{
+            border: 1px solid black;
+            padding: 1em;
+            margin: 1em;
+        }
+    </style>
+    <h2>EXERCICE 011</h2>
     <?php
-        function equation($a,$b,$c){
+
+        function Equation($a, $b, $c){
+            // j'informe les nombre tiré au hasard
+            echo "<p> les nombre tiré au sort sont</p>
+            <p> a = $a, b = $b, et c = $c</p>";
+            // 1°Calculer le delta
             $delta = ($b * $b) - (4 * $a * $c);
-            echo "<p>Les nombres tiré au sort sont</p><p>a = $a, b = $b, c = $c</p><p>Le delta obtenu est : ($b X $b) - (4 X $a X $b) = $delta</p>";
-            if ($delta <0){
-                echo "il n'y a pas de solution";
-            }elseif($delta == 0){
-                $solution = -$b / (2 * $a);
-                echo "x = -$b / (2 * $a) => $solution";
-            }elseif($delta > 0){
-                $racineA = (-$b - sqrt($delta)) / ($a*$a);
-                $racineB = (-$b + sqrt($delta)) / ($a*$a);
-                echo "<p>racine A = (-$b - √$delta) / ($a * $a) => $racineA</p><p>racine B = (-$b + √$delta) / ($a * $a) => $racineB";
+
+            echo "<p>Le delta obtenu est : ($b X $b) - (4 X $a X $c) = $delta";
+
+            // Vérifier selon la valeur du delta:
+                // a) Si Delta < 0 --> pas de solution
+                if($delta < 0)
+                {
+                    echo "<h3>Le delta est inférieur à 0... Il n'y a pas de solution!!! pour ce tirage au sort</h3>";
+                }
+                else if($delta == 0){
+                    $resultat = -$b / (2 * $a);
+                    echo "<p>Le delta est = à 0... le calcul sera donc -$b / (2 X $a) = $resultat</p>";
+                }
+                else if($delta > 0)
+                {
+                    $racineA = (-$b - sqrt($delta)) / (2 * $a);
+                    $racineB = (-$b + sqrt($delta)) / (2 * $a);
+
+                    echo "<h3>racine A = (-$b - √$delta) / (2 * $a) => $racineA</h3>";
+                    echo "<h3>racine B = (-$b + √$delta) / (2 * $a) => $racineB</h3>";
+
+                }
             }
-        };
-        equation(rand(1,10),rand(1,10),rand(1,10));
+
+            Equation(rand(1,10), rand(1, 10), rand(1, 10));
     ?>
-    <h2>Exercice 12</h2>
-    <?php
-            $guy = [
-                'Nom' => 'Guy',
-                'Age' => 42,
-                'Sexe' => 'Homme'
-            ];
-            $delphine = [
-                'Nom' => 'Delphine',
-                'Age' => 39,
-                'Sexe' => 'Femme'
-            ];
-        function tableau($x){
-            echo "<p>Nom : $x[Nom]</p><p>age : $x[Age]</p><p>sexe : $x[Sexe]</p>";
+
+    <h2>Exercice 012</h2>
+<?php
+// Je crée les deux tableau contenant mes personnes
+    $j1 = [
+        "nom" => "Guy",
+        "age" => 42,
+        "sexe" => true
+    ];
+
+    $j2 = [
+        "nom" => "Delphine",
+        "age" => 39,
+        "sexe" => false
+    ];
+
+    // J'appelle la fonction que je vais créer juste après
+    afficherPersonne($j1);
+    echo "------------------- <br />";
+    afficherPersonne($j2);
+
+    // Je crée la fonction me permettant d'afficher une personne
+    function afficherPersonne($x){
+        echo "<p>Nom : " . $x["nom"] . "</p>";
+        echo "<p>age : " . $x["age"] . "</p>";
+        if($x["sexe"]){
+            echo "<p>sexe : Homme </p>";
+        } else {
+            echo "<p>sexe : Femme  </p>";
         }
-        tableau($guy);
-        echo '------------';
-        tableau($delphine);
+    }
     ?>
-    <h2>Exercice 13</h2>
-    <?php
-        $marc = [
-            'Nom' => 'Marc',
-            'Age' => 25,
-            'Sexe' => 'Homme'
-        ];
-        $mathilde = [
-            'Nom' => 'Mathilde',
-            'Age' => 21,
-            'Sexe' => 'Femme'
-        ];
-        $tableau = [
-            $guy,$delphine,$marc,$mathilde
-        ];
-        foreach($tableau as $value){
-            tableau($value);
-            echo "<p>-----------</p>";
-        }
-    ?>
+    <h2>Exercice 013</h2>
+
+<?php
+//Je rajoute deux nouvelles personnes
+    $j3 = [
+        "nom" => "Marc",
+        "age" => 25,
+        "sexe" => true
+    ];
+    $j4 = [
+        "nom" => "Mathilde",
+        "age" => 21,
+        "sexe" => false
+    ];
+
+    // J'envoie toutes les personnes dans un tableau multidimensionnel
+    $personnes = [$j1,$j2,$j3,$j4];
+
+    // J'utilise une boucle pour afficher l'intégralité des joueurs contenue dans ce nouveau tableau
+    foreach($personnes as $personnes){
+        // J'utilise la fonction créé plus haut qui reste valide !
+        afficherPersonne($personnes);
+        echo "------------------------ <br />";
+    }
+
+    
+
+?>
+
     <h2>Exercice 14</h2>
+
     <?php
-        function moyenne($a,$b,$c,$d){
-            $moyenne = (($a + $b + $c + $d) / 4);
-            return $moyenne;
-        };
-        foreach($tableau as $value){
-            tableau($value);
-            $note = [rand(1,20), rand(1,20), rand(1,20), rand(1,20)];
-            echo "<p>Note 1 : $note[0]</p><p>Note 2 : $note[1]</p><p>Note 3 : $note[2]</p><p>Note 4 : $note[3]</p>";
-            $moyenne = moyenne($note[0],$note[1],$note[2],$note[3]);
-            echo "<p>La moyenne est de : $moyenne</p>";
-            echo "<p>-----------</p>";
+    // Je rajoute pour chaque personne une nouvelle clé qui contient le tableau des notes aléatoires
+        $j1["notes"] =  [rand(1, 20), rand(1, 20), rand(1, 20), rand(1, 20)];
+        $j2["notes"] =  [rand(1, 20), rand(1, 20), rand(1, 20), rand(1, 20)];
+        $j3["notes"] =  [rand(1, 20), rand(1, 20), rand(1, 20), rand(1, 20)];
+        $j4["notes"] =  [rand(1, 20), rand(1, 20), rand(1, 20), rand(1, 20)];
+
+        // Je réinitialise le tableau personnes en réinjectant les tableau mis à jours
+        $personnes = [$j1, $j2, $j3, $j4];
+
+        // Bonus, je crée une section qui aura la classe personnes donc le style se trouve dans ma balise head
+        echo "<section class='personne'>";
+        // Je reboucle sur mon tableau de personne pour en afficher tous les composants
+        foreach($personnes as $personnes){
+            echo "<div class='border'>";
+            afficherPersonnes($personnes);
+            echo "------------------------ <br />";
+            echo "</div>";
         }
+        // Je ferme la section
+        echo "</section>";
+        // Je crée une nouvelle fonction qui prendra en charge cette fois le calcul de la moyenne
+        function afficherPersonnes($x){
+            echo "<p>Nom : " . $x["nom"] . "</p>";
+            echo "<p>age : " . $x["age"] . "</p>";
+            if($x["sexe"]){
+                echo "<p>sexe : Homme </p>";
+            } else {
+                echo "<p>sexe : Femme  </p>";
+            }
+            $resultat = 0;
+            foreach($x["notes"] as $indice => $note){
+                $resultat += $note;
+                echo "<p>Note : ". ($indice + 1). " : " . $note. "</p>";
+            }
+            echo "<p>La moyenne est de : ". ($resultat / count($x["notes"])). "</p>";
+
+        }
+
     ?>
 </body>
 </html>

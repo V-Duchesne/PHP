@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
+<?php 
+    $titre = "Exemple 007 - Les fonctions";
+    require "../common/template.php" ?>
 <!-- PARTIE 01 -->
     <?php
         function HelloWorld(){
@@ -39,7 +32,7 @@
         if ($makefoo) {
             function foo()
             {
-                echo "<h4>fonction foo appelée</h4>";
+                echo "<h4>Je n'existe pas tant que le programme n'est pas passé ici.</h4>";
             }
         }
 
@@ -50,7 +43,7 @@
 
         function bar()
         {
-            echo "<h4>Fonction bar() appelée</h4>";
+            echo "<h4>J'existe dès le début du programme.</h4>";
         }
     ?>
 
@@ -63,7 +56,7 @@
         {
             function Test() 
             {
-                echo "Je n'existe pas tant que Activer() n'est pas appelé.\n";
+                echo "Je n'existe pas tant que foo() n'est pas appelé.\n";
             }
         }
 

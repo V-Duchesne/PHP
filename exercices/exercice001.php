@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<?php 
+    $titre = "Exercice Série 001 - Les types de variable";
+    require "../common/template.php" ?>
 <!-- PARTIE 1 -->
 <?php
 
@@ -60,8 +54,3 @@
         $annéeNaissance = (2021 - $personne["age"]);
         ?>
         <p>Bonjour <?= $personne["prénom"] . ' ' . $personne["nom"] ?>, tu as <?= $personne["age"] ?> ans, tu es probablement né en <?= $annéeNaissance ?>.</p>
-
-
-
-</body>
-</html>
